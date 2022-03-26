@@ -1,5 +1,6 @@
+import Phaser from "phaser";
 import { SCREEN_HEIGHT, SCREEN_WIDTH } from "./constants";
-import GameScene from "./GameScene";
+import { preload, create, update } from "./GameScene";
 
 export default class Game {
     constructor({ canvas }) {
@@ -8,11 +9,16 @@ export default class Game {
             type: Phaser.AUTO,
             width: SCREEN_WIDTH,
             height: SCREEN_HEIGHT,
+            parent: canvas,
             physics: {
                 default: 'arcade'
+            },
+            scene: {
+                preload,
+                create,
+                update
             }
         };
-        this.game = new Pasher(this.config);
-        this.game.scene.add('game', GameScene, true, { x: 200, y: 300 })
+        this.game = new Phaser.Game(this.config);
     }
 } 

@@ -88,3 +88,14 @@ button {
 button:hover {
   background-color: coral;
 }
+
+.GameContainer {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  width: calc(140px * 6);
+  gap: 8px;
+}
+
+.Game__Card {
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, .1);
+}

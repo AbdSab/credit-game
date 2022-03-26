@@ -1,12 +1,13 @@
-import { useEffect, useRef } from "react/cjs/react.production.min";
+import { useEffect, useRef } from "react";
+import Game from "./game/Game";
 
 export default function ShipBorrower() {
-    const canvas = useRef(null);
+    const canvas = useRef();
 
     useEffect(() => {
         if(!canvas.current) return;
         new Game({canvas: canvas.current});
     }, []);
 
-    return (<canvas ref={canvas} />)
+    return (<div className="ShipContainer" ref={canvas} />)
 }
