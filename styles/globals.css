@@ -1,16 +1,90 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+.CardList {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 32px;
+  height: 100vh;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.Card {
+  position: relative;
+  font-size: xx-large;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .1s ease-in;
+  cursor: pointer;
+}
+.Card:hover {
+  transform: scale(110%);
+}
+.Card::after {
+  background-color: black;
+  opacity: .2;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all .5s ease-in;
 }
 
-* {
-  box-sizing: border-box;
+.Card img {
+  transition: all .5s ease-in;
+}
+.Card div {
+  transform: rotateY(180deg);
+  position: absolute;
+  opacity: 0;
+  transition: opacity .2s ease-in .3s, transform .5s ease-in;
+}
+.Card__Turn::after {
+  opacity: 0;
+  transform: rotateY(180deg);
+}
+.Card__Turn img {
+  transform: rotateY(180deg);
+} 
+.Card__Turn div {
+  transform: rotateY(0);
+  opacity: 1;
+}
+
+.Modal {
+  border-radius: 4px;
+  position: fixed;
+  width: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 12px;
+}
+
+.Modal__Content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal__Menu {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px;
+}
+
+button {
+  border: 0;
+  background-color: darkslateblue;
+  color: white;
+  padding: 8px 32px;
+  cursor: pointer;
+  transition: all .2s ease-in;
+}
+
+button:hover {
+  background-color: coral;
 }
