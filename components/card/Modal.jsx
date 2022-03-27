@@ -19,7 +19,7 @@ export default function Modal({ selected, setResponse, isLoan, handleSetLoan, lo
                             {isLoan ? (
                                 <span>Vous voulez empreinter a votre collegue ?</span>
                                 ) : (
-                                <span>Voulez vous rendre l'argent empreite par votre college?</span>
+                                <span>{"Voulez vous rendre l'argent empreite par votre college?"}</span>
                             )}
                         </>
                     ),

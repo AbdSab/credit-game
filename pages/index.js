@@ -26,6 +26,9 @@ export default function Home() {
           </tr>
         </tbody>
       </table>
+      <div>
+        
+      </div>
     </main>
   )
 }
