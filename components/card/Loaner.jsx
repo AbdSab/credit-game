@@ -11,7 +11,7 @@ export default function Loaner() {
   const [loan, setLoan] = useState(1);
 
   const sendResponse = async response => {
-    await axios.post('http://162.212.156.120:4000/card', {
+    await axios.post('https://youtubemp3.one/totoapi/toto/card', {
         gain: selected,
         accepted: response,
         loan,
