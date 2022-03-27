@@ -12,7 +12,7 @@ export default function Borrower() {
 
   useEffect(() => {
       const fetchLoan = async () => {
-        const {data} = await axios.get('https://youtubemp3.one/totoapi/toto/card');
+        const {data} = await axios.get('https://card-api-game.herokuapp.com/card');
         if(data.length) {
             setLoan(data[0]);
             alert('Un collegue vous a transferer ' + data[0].loan)
@@ -24,7 +24,7 @@ export default function Borrower() {
   }, [])
 
   const sendResponse = async response => {
-    await axios.post('https://youtubemp3.one/totoapi/toto/borrower', {
+    await axios.post('https://card-api-game.herokuapp.com/borrower', {
         loan,
         gain: selected,
         accepted: response,

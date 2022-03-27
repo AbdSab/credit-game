@@ -11,7 +11,7 @@ export default function Loaner() {
   const [loan, setLoan] = useState(1);
 
   const sendResponse = async response => {
-    await axios.post('https://youtubemp3.one/totoapi/toto/card', {
+    await axios.post('https://card-api-game.herokuapp.com/card', {
         gain: selected,
         accepted: response,
         loan,
