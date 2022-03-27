@@ -16,20 +16,13 @@ export default function Home() {
           <h3>Chosir type de jeu</h3>
         </caption>
         <thead>
-          <td>Jeu</td>
           <td>Empreineur</td>
           <td>Empreinte</td>
         </thead>
         <tbody>
           <tr>
-            <td>Jeu de cartes</td>
             <td><Link href="/card/loaner">Jouer (Empreinteur)</Link></td>
             <td><Link href="/card/borrower">Jouer (Empreinte)</Link></td>
-          </tr>
-          <tr>
-            <td>Jeu de ship</td>
-            <td><Link href="/ship/loaner">Jouer (Empreinteur)</Link></td>
-            <td><Link href="/ship/borrower">Jouer (Empreinte)</Link></td>
           </tr>
         </tbody>
       </table>
