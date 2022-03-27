@@ -8,30 +8,39 @@ export default function Loaner() {
   const [selected, setSelected] = useState(null);
   const [turned, setTurned] = useState(false);
   const [done, setDone] = useState(false);
+  const [loan, setLoan] = useState(1);
 
   const sendResponse = async response => {
     await axios.post('http://localhost:4000/card', {
         gain: selected,
         accepted: response,
-        loan: selected/2,
+        loan,
     });
     setDone(true);
   }
 
   useEffect(() => {
-    setValues([100, 200, 300]);
+    setValues([300, 100, 200]);
   }, []);
 
   useEffect(() => {
       if(!selected) return;
-      setTimeout(() => setTurned(true), 2000);
+      setTimeout(() => setTurned(true), 1000);
   }, [selected])
+
+  const handleSetLoan = e => {
+    const v = Number(e.target.value);
+    if(isNaN(v) || v < 0 ||  v > selected) {
+      return;
+    }
+    setLoan(Number(e.target.value));
+  }
 
   return (
     <div className="App">
       {!done && values && <CardList values={values} selected={selected} setSelected={setSelected}/>}
       {!done && selected && turned && (
-        <Modal isLoan={true} setResponse={sendResponse} selected={selected}/>
+        <Modal isLoan={true} setResponse={sendResponse} selected={selected} handleSetLoan={handleSetLoan} loan={loan}/>
       )}
       {done && (
           <div>Merci</div>

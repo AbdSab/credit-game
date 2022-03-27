@@ -15,6 +15,7 @@ export default function Borrower() {
         const {data} = await axios.get('http://localhost:4000/card');
         if(data.length) {
             setLoan(data[0]);
+            alert('Un collegue vous a transferer ' + data[0].loan)
             clearInterval(interval);
         }
       }
@@ -32,12 +33,12 @@ export default function Borrower() {
   }
 
   useEffect(() => {
-    setValues([100, 200, 300]);
+    setValues([500, 600, 400]);
   }, []);
 
   useEffect(() => {
       if(!selected) return;
-      setTimeout(() => setTurned(true), 2000);
+      setTimeout(() => setTurned(true), 1000);
   }, [selected])
 
   if(!loan) return <div>Attente dun pret</div>
