@@ -53,7 +53,7 @@ export default function Borrower() {
   }
 
   useEffect(() => {
-    setValues(shuffleArray([500, 600, 400]));
+    setValues(shuffleArray([700, 600, 800]));
   }, []);
 
   useEffect(() => {
@@ -67,7 +67,7 @@ export default function Borrower() {
     <div className="App">
       {!done && values && <CardList values={values} selected={selected} setSelected={setSelected}/>}
       {!done && selected && turned && (
-        <Modal isLoan={false} setResponse={sendResponse} selected={selected}/>
+        <Modal isLoan={false} setResponse={sendResponse} selected={selected} loan={loan}/>
       )}
       {done && (
           <div style={{width: '100%', height: '100vh', display:'flex', justifyContent:'center', alignItems:'center'}}>

@@ -19,7 +19,7 @@ export default function Modal({ selected, setResponse, isLoan, handleSetLoan, lo
                             {isLoan ? (
                                 <span>{`Voulez-vous prêter le joueur 2 ?`}</span>
                                 ) : (
-                                <span>{"Voulez-vous rembourser le joueur 1 ?"}</span>
+                                <span>{`Voulez-vous rembourser le joueur 1 la somme ${loan.loan + loan.loan/2}?`}</span>
                             )}
                         </>
                     ),
