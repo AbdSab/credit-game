@@ -4,6 +4,14 @@ import Modal from "./Modal";
 import axios from 'axios';
 import { v4 } from 'uuid';
 
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
+
 export default function Loaner() {
   const [values, setValues] = useState(null);
   const [selected, setSelected] = useState(null);
@@ -32,7 +40,7 @@ export default function Loaner() {
   }
 
   useEffect(() => {
-    setValues([300, 100, 200]);
+    setValues(shuffleArray([300, 100, 200]));
   }, []);
 
   useEffect(() => {

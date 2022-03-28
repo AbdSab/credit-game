@@ -3,7 +3,14 @@ import CardList from "./CardList";
 import Modal from "./Modal";
 import axios from 'axios';
 import { v4 } from 'uuid';
-import Link from "next/link";
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+}
 
 export default function Borrower() {
   const [values, setValues] = useState(null);
@@ -46,7 +53,7 @@ export default function Borrower() {
   }
 
   useEffect(() => {
-    setValues([500, 600, 400]);
+    setValues(shuffleArray([500, 600, 400]));
   }, []);
 
   useEffect(() => {
