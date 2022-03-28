@@ -20,7 +20,7 @@ export default function Home() {
       </Head>
       <h3>{`Instruction`}</h3>
       <p>
-        {`Actuellement vous participez à une expérience économique. L’expérience est présentée sous une forme électronique. L’expérience se répète 5 fois consécutivement.`}
+        {`Actuellement vous participez à une expérience en économie expérimentale. L’expérience est présentée sous une forme électronique. L’expérience se répète 5 fois consécutivement.`}
       </p>
       <h3>{`Démarche`}</h3>
       <p>
