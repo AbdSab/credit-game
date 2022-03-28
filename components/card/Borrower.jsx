@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import CardList from "./CardList";
 import Modal from "./Modal";
 import axios from 'axios';
+import { v4 } from 'uuid';
+import Link from "next/link";
 
 export default function Borrower() {
   const [values, setValues] = useState(null);
@@ -9,6 +11,16 @@ export default function Borrower() {
   const [turned, setTurned] = useState(false);
   const [done, setDone] = useState(false);
   const [loan, setLoan] = useState(false);
+  const [id, setId] = useState(null);
+
+  useEffect(() => {
+    if(sessionStorage.getItem('borrower_id')) setId(sessionStorage.getItem('borrower_id'));
+    else {
+      const _id = v4();
+      sessionStorage.setItem('borrower_id', _id);
+      setId(_id);
+    }
+  }, [])
 
   useEffect(() => {
       const fetchLoan = async () => {
@@ -24,7 +36,8 @@ export default function Borrower() {
   }, [])
 
   const sendResponse = async response => {
-    await axios.post('https://card-api-game.herokuapp.com/borrower', {
+    await axios.post('https://card-api-game.herokuapp.com/card/borrower', {
+        id,
         loan,
         gain: selected,
         accepted: response,
@@ -41,7 +54,7 @@ export default function Borrower() {
       setTimeout(() => setTurned(true), 1000);
   }, [selected])
 
-  if(!loan) return <div>Attente dun pret</div>
+  if(!loan) return <div>{`Attente d’un prêt`}</div>
 
   return (
     <div className="App">
@@ -50,7 +63,9 @@ export default function Borrower() {
         <Modal isLoan={false} setResponse={sendResponse} selected={selected}/>
       )}
       {done && (
-          <div>Merci</div>
+          <div style={{width: '100%', height: '100vh', display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <button onClick={() => window.location.reload()}>Rejouer</button>
+          </div>
       )}
     </div>
   );

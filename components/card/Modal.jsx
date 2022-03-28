@@ -12,20 +12,20 @@ export default function Modal({ selected, setResponse, isLoan, handleSetLoan, lo
             <div className="Modal__Content">
                 {{
                     0: (
-                        <>Felicitation, vous avez gagne <strong style={{margin:4}}>{selected} DH</strong></>
+                        <>{`Félicitation, vous avez gagné`} <strong style={{margin:4}}>{selected} DH</strong></>
                     ),
                     1: (
                         <>
                             {isLoan ? (
-                                <span>Vous voulez empreinter a votre collegue ?</span>
+                                <span>{`Voulez-vous prêter le joueur 2 ?`}</span>
                                 ) : (
-                                <span>{"Voulez vous rendre l'argent empreite par votre college?"}</span>
+                                <span>{"Voulez-vous rembourser le joueur 1 ?"}</span>
                             )}
                         </>
                     ),
                     2: (
                         <>
-                            Entrez la somme
+                            {`Entrez la somme à prêter`}
                         </>
                     )
                 }[step]}
@@ -40,10 +40,14 @@ export default function Modal({ selected, setResponse, isLoan, handleSetLoan, lo
                             </>
                         ),
                         2: (
-                            <>
-                                <input type="number" min={1} max={loan} value={loan} onChange={handleSetLoan}/>
-                                <button onClick={onclick}>Empreinter</button>
-                            </>
+                            <div>
+                                <div style={{display: 'flex', alignItems: 'center'}}>
+                                    <input type="number" min={1} max={loan} value={loan} onChange={handleSetLoan}/>
+                                    <span style={{marginLeft: '20px'}}>DH</span>
+                                </div>
+                                <br />
+                                <button onClick={onclick} style={{width: '100%'}}>Ok</button>
+                            </div>
                         )
                     }[step]}
                 </div>

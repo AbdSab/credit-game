@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import CardList from "./CardList";
 import Modal from "./Modal";
 import axios from 'axios';
+import { v4 } from 'uuid';
 
 export default function Loaner() {
   const [values, setValues] = useState(null);
@@ -9,9 +10,20 @@ export default function Loaner() {
   const [turned, setTurned] = useState(false);
   const [done, setDone] = useState(false);
   const [loan, setLoan] = useState(1);
+  const [id, setId] = useState(null);
+
+  useEffect(() => {
+    if(sessionStorage.getItem('loaner_id')) setId(sessionStorage.getItem('loaner_id'));
+    else {
+      const _id = v4();
+      sessionStorage.setItem('loaner_id', _id);
+      setId(_id);
+    }
+  }, []);
 
   const sendResponse = async response => {
     await axios.post('https://card-api-game.herokuapp.com/card', {
+        id,
         gain: selected,
         accepted: response,
         loan,
@@ -43,7 +55,9 @@ export default function Loaner() {
         <Modal isLoan={true} setResponse={sendResponse} selected={selected} handleSetLoan={handleSetLoan} loan={loan}/>
       )}
       {done && (
-          <div>Merci</div>
+          <div style={{width: '100%', height: '100vh', display:'flex', justifyContent:'center', alignItems:'center'}}>
+            <button onClick={() => window.location.reload()}>Rejouer</button>
+          </div>
       )}
     </div>
   );
