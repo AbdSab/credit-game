@@ -34,7 +34,7 @@ export default function Borrower() {
         const {data} = await axios.get('https://card-api-game.herokuapp.com/card');
         if(data.length) {
             setLoan(data[0]);
-            alert('Un collegue vous a transferer ' + data[0].loan)
+            alert('Un collegue vous a transféré ' + data[0].loan)
             clearInterval(interval);
         }
       }
