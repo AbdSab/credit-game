@@ -22,8 +22,8 @@ export default function Select() {
                 </caption>
                 <tbody>
                     <tr>
-                        <td><Link href="/card/loaner">Jouer 1</Link></td>
-                        <td><Link href="/card/borrower">Jouer 2</Link></td>
+                        <td><Link href="/card/loaner">Joueur 1</Link></td>
+                        <td><Link href="/card/borrower">Joueur 2</Link></td>
                     </tr>
                 </tbody>
             </table>
