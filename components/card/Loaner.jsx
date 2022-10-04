@@ -30,7 +30,7 @@ export default function Loaner() {
   }, []);
 
   const sendResponse = async response => {
-    await axios.post('https://card-game.eu-4.evennode.com/card', {
+    await axios.post('http://card-game.eu-4.evennode.com/card', {
         id,
         gain: selected,
         accepted: response,
