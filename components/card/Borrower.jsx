@@ -31,7 +31,7 @@ export default function Borrower() {
 
   useEffect(() => {
       const fetchLoan = async () => {
-        const {data} = await axios.get('https://card-api-game.herokuapp.com/card');
+        const {data} = await axios.get('https://brahim-card-game.onrender.com/card');
         if(data.length) {
             setLoan(data[0]);
             alert('Un collegue vous a transféré ' + data[0].loan)
@@ -43,7 +43,7 @@ export default function Borrower() {
   }, [])
 
   const sendResponse = async response => {
-    await axios.post('https://card-api-game.herokuapp.com/card/borrower', {
+    await axios.post('https://brahim-card-game.onrender.com/card/borrower', {
         id,
         loan,
         gain: selected,

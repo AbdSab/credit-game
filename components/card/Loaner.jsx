@@ -30,7 +30,7 @@ export default function Loaner() {
   }, []);
 
   const sendResponse = async response => {
-    await axios.post('https://card-api-game.herokuapp.com/card', {
+    await axios.post('https://brahim-card-game.onrender.com/card', {
         id,
         gain: selected,
         accepted: response,
