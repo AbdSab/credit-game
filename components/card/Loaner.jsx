@@ -64,7 +64,7 @@ export default function Loaner() {
       )}
       {done && (
           <div style={{width: '100%', height: '100vh', display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <button onClick={() => window.location.reload()}>Rejouer</button>
+            <button onClick={() => window.location.reload()}>Replay</button>
           </div>
       )}
     </div>

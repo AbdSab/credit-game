@@ -18,19 +18,19 @@ export default function Home() {
           <link rel="icon" href="/favicon.ico" />
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/light.css" />
       </Head>
-      <h3>{`Instruction`}</h3>
+      <h3>{`Instructions`}</h3>
       <p>
-        {`Actuellement vous participez à une expérience en économie expérimentale. L’expérience est présentée sous une forme électronique. L’expérience se répète 5 fois consécutivement.`}
+        {`You are currently participating in an experiment in experimental economics presented in an electronic form. The experiment is repeated 5 times consecutively.`}
       </p>
-      <h3>{`Démarche`}</h3>
+      <h3>{`Steps`}</h3>
       <p>
-        {`Vous allez obtenir un statut de joueur soit « 1 » ou « 2 » ceci grâce au tirage au sort. Si vous obtenu le statut joueur 1, vous commencez en premier l’expérience. Soyez attentif en manipulant le jeu. Vers la fin du jeu, vous êtes invités à prêter le joueur 2 une somme financière pour qu’il puisse aussi joueur son rôle. Vous avez la liberté d’accepter ou refuser ce prêt. Si vous obtenu le statut joueur 2, vous allez attendre que le joueur 1 vous attribue un support financier sous forme de crédit.  Vous avez la liberté de rembourser ou pas le crédit. En cas de remboursement, est évidant de céder un montant doublé. `}
+        {`You will obtain a player status either "1" or "2" this thanks to the draw. If you got player 1 status, you start the experience first. Be attentive while handling the game. Towards the end of the game, you are asked to lend player 2 a financial sum so that he can also play his role. You have the freedom to accept or refuse this loan. If you obtained player 2 status, you will wait for player 1 to give you financial support in the form of credit. You have the freedom to repay or not the credit. In case of reimbursement, it is obvious to transfer a doubled amount.`}
       </p>
-      <h3>{`Avant l’expérience`}</h3>
+      <h3>{`Before the experience`}</h3>
       <p style={{marginBottom: '40px'}}>
-        {`Si vous avez une question n’hésitez pas à l’adresser à l’expérimentateur avant le début de l’expérience`}
+        {`If you have a question do not hesitate to address it to the experimenter before the start of the experiment.`}
       </p>
-      <Link href="/select"><a style={{color:'black', padding:'10px', backgroundColor: '#C0D9D9'}}>{`Passer à l’expérience`}</a></Link>
+      <Link href="/select"><a style={{color:'black', padding:'10px', backgroundColor: '#C0D9D9'}}>{`Start the experiment`}</a></Link>
       <div style={{display: 'flex', justifyContent:'space-between', marginTop: '48px'}}>
         <Image src="/fsjes.png" width={160} height={64} alt="asd"/>
         <Image src="/labo.png" width={160} height={64} alt="asd"/>

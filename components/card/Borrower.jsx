@@ -34,7 +34,7 @@ export default function Borrower() {
         const {data} = await axios.get('https://card-game.eu-4.evennode.com/card');
         if(data.length) {
             setLoan(data[0]);
-            alert('Un collegue vous a transféré ' + data[0].loan)
+            alert('A colleague transferred you ' + data[0].loan)
             clearInterval(interval);
         }
       }
@@ -61,7 +61,7 @@ export default function Borrower() {
       setTimeout(() => setTurned(true), 1000);
   }, [selected])
 
-  if(!loan) return <div>{`Attente d’un prêt`}</div>
+  if(!loan) return <div>{`Waiting for a loan`}</div>
 
   return (
     <div className="App">
@@ -71,7 +71,7 @@ export default function Borrower() {
       )}
       {done && (
           <div style={{width: '100%', height: '100vh', display:'flex', justifyContent:'center', alignItems:'center'}}>
-            <button onClick={() => window.location.reload()}>Rejouer</button>
+            <button onClick={() => window.location.reload()}>Replay</button>
           </div>
       )}
     </div>

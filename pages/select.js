@@ -18,12 +18,12 @@ export default function Select() {
             <h1>Credit game</h1>
             <table>
                 <caption>
-                <h3>Choix du joueur (tirage au sort)</h3>
+                <h3>Select player (Draw game)</h3>
                 </caption>
                 <tbody>
                     <tr>
-                        <td><Link href="/card/loaner">Joueur 1</Link></td>
-                        <td><Link href="/card/borrower">Joueur 2</Link></td>
+                        <td><Link href="/card/loaner">Player 1</Link></td>
+                        <td><Link href="/card/borrower">Player 2</Link></td>
                     </tr>
                 </tbody>
             </table>

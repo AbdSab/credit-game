@@ -12,31 +12,31 @@ export default function Modal({ selected, setResponse, isLoan, handleSetLoan, lo
             <div className="Modal__Content">
                 {{
                     0: (
-                        <>{`Félicitation, vous avez gagné`} <strong style={{margin:4}}>{selected} DH</strong></>
+                        <>{`Congratulations, you won`} <strong style={{margin:4}}>{selected} DH</strong></>
                     ),
                     1: (
                         <>
                             {isLoan ? (
-                                <span>{`Voulez-vous prêter le joueur 2 ?`}</span>
+                                <span>{`Do you want to loan player 2 ?`}</span>
                                 ) : (
-                                <span>{`Voulez-vous rembourser le joueur 1 la somme ${loan.loan + loan.loan/2}?`}</span>
+                                <span>{`Do you want to refund player 1 the amount ${loan.loan + loan.loan/2}?`}</span>
                             )}
                         </>
                     ),
                     2: (
                         <>
-                            {`Entrez la somme à prêter`}
+                            {`Enter the amount to lend`}
                         </>
                     )
                 }[step]}
             </div>
             <div className="Modal__Menu">
                     {{
-                        0: <button onClick={_ => setStep(1)}>Suivant</button>,
+                        0: <button onClick={_ => setStep(1)}>Next</button>,
                         1: (
                             <>
-                                <button onClick={_ => isLoan ? setStep(2) : setResponse(true)}>Oui</button>
-                                <button onClick={_ => {setResponse(false)}}>Non</button>
+                                <button onClick={_ => isLoan ? setStep(2) : setResponse(true)}>Yes</button>
+                                <button onClick={_ => {setResponse(false)}}>No</button>
                             </>
                         ),
                         2: (
