@@ -31,7 +31,7 @@ export default function Borrower() {
 
   useEffect(() => {
       const fetchLoan = async () => {
-        const {data} = await axios.get('http://card-game.eu-4.evennode.com/card');
+        const {data} = await axios.get('https://thingproxy.freeboard.io/fetch/http://card-game.eu-4.evennode.com/card');
         if(data.length) {
             setLoan(data[0]);
             alert('A colleague transferred you ' + data[0].loan)
@@ -43,7 +43,7 @@ export default function Borrower() {
   }, [])
 
   const sendResponse = async response => {
-    await axios.post('http://card-game.eu-4.evennode.com/card/borrower', {
+    await axios.post('https://thingproxy.freeboard.io/fetch/http://card-game.eu-4.evennode.com/card/borrower', {
         id,
         loan,
         gain: selected,
